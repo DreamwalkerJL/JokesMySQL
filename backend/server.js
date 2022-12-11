@@ -3,6 +3,7 @@ import mysql from "mysql";
 import bodyParser from "body-parser";
 import cors from "cors";
 import path from 'path'
+import {fileURLToPath} from 'url';
 import dotenv from 'dotenv'
 
 const app = express();
@@ -89,8 +90,6 @@ if (process.env.NODE_ENV === "production") {
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
 
-app.listen(8800, () => {
-  console.log("connected to backend");
-});
+
 
 
