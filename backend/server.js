@@ -26,9 +26,9 @@ app.use(bodyParser.json());
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json("hello this is the backend");
-});
+// app.get("/", (req, res) => {
+//   res.json("hello this is the backend");
+// });
 
 app.get("/jokes", (req, res) => {
   const q = "SELECT * FROM jokes";
