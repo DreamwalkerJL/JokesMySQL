@@ -19,7 +19,7 @@ export default function Add() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8800/jokes", joke);
+      await axios.post("http://localhost:5000/jokes", joke);
       navigate("/");
     } catch (error) {
       console.log(error);

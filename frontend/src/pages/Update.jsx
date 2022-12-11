@@ -24,7 +24,7 @@ export default function Update() {
     e.preventDefault();
 
     try {
-      await axios.put("http://localhost:8800/jokes/" + jokeId, joke);
+      await axios.put("http://localhost:5000/jokes/" + jokeId, joke);
       navigate("/");
     } catch (error) {
       console.log(error);

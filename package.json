@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "jokesapp",
   "version": "1.0.0",
   "engines": {
     "node": "16.15.0"
