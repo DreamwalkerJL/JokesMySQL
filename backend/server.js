@@ -3,6 +3,8 @@ import mysql from "mysql";
 import bodyParser from "body-parser";
 import cors from "cors";
 import path from 'path'
+import dotenv from 'dotenv'
+
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 5000;
