@@ -5,6 +5,7 @@ import cors from "cors";
 const app = express();
 app.use(cors());
 
+
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -67,4 +68,5 @@ app.put("/jokes/:id", (req, res) => {
 app.listen(8800, () => {
   console.log("connected to backend");
 });
+
 
