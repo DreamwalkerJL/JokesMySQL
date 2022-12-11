@@ -10,7 +10,7 @@ export default function Jokes() {
   useEffect(() => {
     async function fetchAllJokes() {
       try {
-        const res = await axios.get("http://localhost:8800/jokes");
+        const res = await axios.get("http://localhost:5000/jokes");
         setJokes(res.data);
         console.log(res);
       } catch (error) {
@@ -22,7 +22,7 @@ export default function Jokes() {
 
   async function handleDelete(id) {
     try {
-      await axios.delete("http://localhost:8800/jokes/" + id);
+      await axios.delete("http://localhost:5000/jokes/" + id);
       window.location.reload();
     } catch (error) {}
   }
