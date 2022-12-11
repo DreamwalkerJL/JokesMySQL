@@ -2,8 +2,10 @@ import express, { json } from "express";
 import mysql from "mysql";
 import bodyParser from "body-parser";
 import cors from "cors";
+import path from 'path'
 const app = express();
 app.use(cors());
+const port = process.env.PORT || 5000;
 
 
 const db = mysql.createConnection({
@@ -64,6 +66,22 @@ app.put("/jokes/:id", (req, res) => {
     return res.json("joke has been updated successfully");
   });
 });
+
+// Serve frontend
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, "../", "frontend", "build", "index.html")
+    )
+  );
+} else {
+  app.get("/", (req, res) => res.send("Please set to production"));
+}
+
+app.listen(port, () => console.log(`Server started on port ${port}`));
+
 
 app.listen(8800, () => {
   console.log("connected to backend");
