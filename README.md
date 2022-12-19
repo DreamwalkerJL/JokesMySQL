@@ -2,7 +2,7 @@
 
 https://jokesdw.up.railway.app/
 
-# Notes App
+# Jokes App
 
 This repository hosts a small client-side web app, created purely for 
 the purpose of learning, that serves as a 
