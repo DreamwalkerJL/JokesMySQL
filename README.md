@@ -1,6 +1,6 @@
 # DEMO
 
-https://notesdw.up.railway.app/
+https://jokesdw.up.railway.app/
 
 # Notes App
 
