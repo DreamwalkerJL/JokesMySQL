@@ -9,15 +9,15 @@ import dotenv from 'dotenv'
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 5000;
-
+const pw = process.env.SQL_PAS
 
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "qwer1234!@#$",
+  password: pw,
   database: "test",
 });
-
+console.log(`hallo ${pw}`)
 // parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded());
 
