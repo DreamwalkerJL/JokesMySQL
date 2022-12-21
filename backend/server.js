@@ -4,20 +4,21 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import path from 'path'
 import {fileURLToPath} from 'url';
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 5000;
-const pw = process.env.SQL_PAS
+
 
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: pw,
+  password: process.env.SQL_PAS,
   database: "test",
 });
-console.log(`hallo ${pw}`)
+console.log(process.env.SQL_PAS)
 // parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded());
 
